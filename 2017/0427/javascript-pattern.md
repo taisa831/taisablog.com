@@ -1,15 +1,60 @@
 Javascriptパターン 第4章
 
-Javascriptパターン輪読会で4章関数の後半を担当したのでその記録
+Javascriptパターン輪読会で第4章「関数」の後半を担当したのでその記録をする
+
+## 4.8 関数プロパティによるメモ化パターン
+
+
+
+## 4.9 設定オブジェクト
+
+設定オブジェクトはAPIをきれいに提供する方法
+
+```
+// 最初のfunction
+function addPerson(first, last) {...}
+
+// 後から引数追加
+function addPerson(first, last, dob, gender, address) {...}
+
+// この段階ですでにシグネチャが長くなってきているかつ引数の省略はできない為以下のような呼び出しとなる
+addPerson("Bruce", "Wayne", new Date(), null, null, "batman")
+```
+
+多数のパラメータを渡すのは不便なので以下のようにパラメータをひとつにまとめてオブジェクトにする
+
+```
+var conf = {
+    username = "batman",
+    first: "Bruce",
+    last: "Wayne"
+};
+addPerson(conf);
+```
+
+**設定オブジェクトの利点**
+
+- パラメータの順序を覚える必要がない
+- オプションのパラメータを安全に省略できる
+- コードが読みやすく保守が楽になる
+- パラメータの追加や削除が簡単になる
+
+**設定オブジェクトの欠点**
+
+- パラメータの名前を覚える必要がある
+- プロパティ名はミニファイされない
+
+このパターンは関数でDOM要素を作る場合や要素のCSSスタイルを設定するときに便利
 
 ## 4.10 カリー化
 
-カリー化の確認の前に関数の適用の正確な意味を考える。
+カリー化を確認する前に「関数の適用」の正確な意味を考える。
 
 ### 4.10.1 関数の適用
 
-純粋な関数プログラミング言語においては、関数は呼び出されるものとしてではなく、むしろ適
-用されるものとして説明される。関数は実際にはオブジェクトであり、メソッドを持っている。
+- 純粋な関数プログラミング言語においては、関数は呼び出されるものとしてではなくむしろ適用されるもの
+- JavaScriptにおいても同様で、メソッドFunction.prototype.apply()を使って関数を適用することができる
+- 関数は実際にはオブジェクトでありメソッドを持っている
 
 ```
 // 関数を定義
@@ -126,3 +171,112 @@ newadd.apply(null, [4]); // 9
 
 上記までのコードはデフォルトではこのような振る舞いをしないが、JavaScriptはこれを実現させることができる。
 この関数に部分適用を理解させて処理させることを**カリー化**という。
+
+## 4.10.3 カリー化
+
+- Haskell Curry という数学者の名前に由来する(Haskell というプログラミング言語もそう)
+
+**カリー化の例**
+
+```
+// カリー化されたadd()
+// 引数の部分リストを受け取る
+function add(x, y) {
+    var oldx = x, oldy = y;
+    if (typeof oldy === "undefined") { // 部分適用
+        return function (newy) {
+            return oldx + newy;
+        }
+    }
+
+    // 完全適用
+    return x + y;
+}
+
+// テスト
+typeof add(5); // function
+add(3)(4); // 7
+
+// 新しい関数を作成し格納する
+var add2000 = add(2000);
+add2000(10); // 2010
+```
+
+- 最初にadd()が呼ばれたとき、それが返す内部関数を含むクロージャーを作成する
+- このクロージャーは元のxとyの値をそれぞれプライベート変数のoldxとoldyに格納する
+- 最初の oldx は内部関数が実行されるときに使われる
+- 部分適用がなく、xとyの両方が渡されたとき関数は両者の和を返すた
+
+以下のコードではyをローカル変数として再利用する
+
+```
+// カリー化されたadd
+// 引数の部分リストを受け取る
+function add(x, y) {
+    if (typeof y === "undefined") { // 部分適用
+        return function(y) {
+            return x + y;
+        }
+    }
+    // 完全適用
+    return x + y;
+}
+
+add(3)(4); // 7
+```
+
+汎用のカリー化関数例
+
+```
+function schonfinkelize(fn) {
+    var slice = Array.prototype.slice,
+        stored_args = slice.call(arguments, 1);
+    return function () {
+        var new_args = slice.call(arguments),
+            args = stored_args.concat(new_args);
+        return fn.apply(null, args);
+    }
+}
+
+// 通常の関数
+function add(x, y) {
+    return x + y;
+}
+
+// 関数をカリー化して新しい関数にする
+var newadd = schonfinkelize(add, 5);
+newadd(4); // 9
+
+// もうひとつのやり方 この新しい関数を直接呼ぶ
+schonfinkelize(add, 6)(7); // 13
+```
+- argumentsはJavaScriptの本物の配列ではないのでsliceでargumentsを配列に変換して扱いやすくしている
+- schonfinkelize()が最初に呼ばれたとき、slice()メソッドへのプライベートな参照をsliceに格納し、その引数をstored_argsに格納する
+- このとき引数の最初の要素はカリー化される関数な ので、この最初の要素を配列から取り除く
+- schonfinkelize() は新しい関数を返す
+- 新しい関数は古い部分適用された引数(stored_args)と新しい引数(new_args)をマージし、マージされた結果を元の関数fn(これもクロー ジャー内でのプライベートな利用が可能て)に適用する
+
+次のような便利な使い方も可能
+
+```
+// 通常の関数
+function add(a, b, c, d, e) {
+    return a + b + c + d + e;
+}
+
+// 引数が複数でも動作する
+schonfinkelize(add, 1, 2, 3)(5, 5); // 16
+
+// 2段階のカリー化
+var addOne = schonfinkelize(add, 1);
+addOne(10, 10, 10, 10); // 41
+
+var addSix = schonfinkelize(addOne, 2, 3);
+addSix(5, 5); // 16
+```
+
+4.10.4 いつカリー化を使うべきか
+
+- 同じ関数をほとんど同じパラメータで呼び出している箇所があった場合
+    - 関数に引数のセットを部分適用することで新しい関数を動的に作成することができる
+- 新しい関数には繰り返されるパタメータが格納されてるので（毎回渡す必要がない）、元の関数が期待する引数の完全なリストを事前に用意しておける
