@@ -1,10 +1,629 @@
 Javascriptパターン 第4章
 
-Javascriptパターン輪読会で第4章「関数」の後半を担当したのでその記録をする
+Javascriptパターン輪読会で第4章「関数」担当したのでその記録をする
+※ この記事はJavascriptパターン第4章の記載内容をサマリしながらコードを写経したものです。
+
+## はじめに
+
+> JavaScriptでは関数がさまざまな目的で使われるので、JavaScriptプログラマにとって関数の取得は必須です。他の言語なら特別な構文があるような処理でもJavaScriptでは関数で処理されます。
+> - JavaScriptパターン -
+
+> JavaScriptで最もすばらしいのは、関数の実装方法である。
+> - JavaScript The Good Parts -
+
+JavaScriptの関数はわかりにくいなと思っていながらも今までノリでやってきたが、上記にあるように本章を読んでJavaScriptの関数は他とは少し違うもののおもしろいなと思うことができた
+
+## 4.1 背景
+
+JavaScriptの関数には2つの大きな特徴がある
+
+1. 第一級オブジェクト
+2. スコープを提供する
+
+>
+> 第一級オブジェクト（ファーストクラスオブジェクト、first-class object）は、あるプログラミング言語において、たとえば生成、代入、演算、（引数・戻り値としての）受け渡しといったその言語における基本的な操作を制限なしに使用できる対象のことである。
+>
+> [第一級オブジェクト - Wikipedia](https://ja.wikipedia.org/wiki/%E7%AC%AC%E4%B8%80%E7%B4%9A%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88)
+
+関数とは次のオブジェクトのことをさす
+
+- プログラムの実行時に動的に作成できる
+- 変数に代入できる、他の変数にコピーされた関数への参照を持てる、拡張できる、いくつかの例外状況を除いて削除できる
+- 他の関数に引数として渡せる、他の関数の戻り値にできる
+- 独自のプロパティとメソッドを持てる
+
+**スコープを提供する**
+
+- JavaScriptには波括弧を使ったローカルスコープはない（言い換えるとブロックはスコープを作らない）
+- JavaScriptにあるのは関数スコープだけ
+- ifの条件部あるいはforやwhileのループの内部でvarを使って変数を定義しても、その変数はそれらの内部で゙ローカルな変数にはならない（その変数は関数の中でのみローカル）
+- 関数で囲んでなければその変数はグローバル変数になる
+
+### 4.1.1 用語の整理
+
+```
+// 名前付き関数式
+var add = function add(a, b) {
+    return a + b;
+};
+
+// 関数式（無名関数）
+var add = function (a, b) {
+    return a + b;
+};
+
+// 関数宣言
+function foo(a, b) {
+    return a + b
+}
+```
+
+### 4.1.2 宣言と式：名前と巻き上げ
+
+構文上の制約で宣言が使えない時には関数式を使う
+
+```
+// これは関数式
+// 引数として関数callMeに渡している
+callMe(function () {
+
+});
+
+// これは名前付き関数式
+callMe(function me(){
+    // 名前付き関数式
+    // 名前は me
+});
+
+// これも関数式
+var myobject = {
+    say: function () {
+        // 関数式
+    }
+};
+```
+
+関数宣言で定義されたものは変数やプロパティに代入することができず、関数呼び出しのときのパラメータとして現れることもない。
+
+```
+// グローバルスコープ
+function foo() {}
+
+function local() {
+    // ローカルスコープ
+    function bar() {}
+    return bar;
+}
+```
+
+### 4.1.3 関数のnameプロパティ
+
+読み取り専用のnameプロパティが利用できる
+※ 関数宣言パターンではと記載してあるが、今は名前付き関数式でもnameは取得できる
+
+```
+// 関数のnameプロパティ
+function foo() {} // 関数宣言
+var bar = function () {}; // 名前なし関数式
+var baz = function baz() {}; // 名前付き関数式
+
+foo.name; // foo
+bar.name; // bar
+baz.name; // baz
+```
+
+※ 名前付き関数式を使うケースは再帰処理のときなどレアケース
+
+### 4.1.4 関数の巻き上げ
+
+関数宣言と名前付き関数式の振る舞いは関数の巻き上げがあるかどうかの違いがある
+
+```
+// グローバル関数
+function foo() {
+    alert('global foo');
+}
+
+function bar() {
+    alert('global bar');
+}
+
+function hoistMe() {
+    console.log(typeof foo); // function
+    console.log(typeof bar); // undefined
+
+    foo(); // local foo
+    bar(); // TypeError: bas is not a function
+
+    // 関数宣言
+    // 変数fooとその実装が巻き上げられる
+    function foo() {
+        console.log('local foo');
+    }
+
+    // 関数式
+    // 変数barだけ巻き上げられる
+    // 実装は巻き上げられない
+    var bar = function () {
+        console.log('local bar');
+    };
+}
+
+hoistMe();
+```
+
+- hoistMe()の中のfooとbarは先頭に移動しグローバルにあるfooとbarは上書きされる
+- ローカルな関数宣言のfooは仕様のあとで定義されていても巻き上げられて上手く動作する
+- ローカルな関数式のbarは宣言だけが巻き上げられて定義は巻き上げられない（コードの実行がbar()に到達するまでbarはundefinedのまま）
+
+## 4.2 コールバックパターン
+
+関数はオブジェクトなので他の関数に引数として渡すことができる
+
+```
+// コールバックパターン
+function writeCode(callback) {
+    // 何か処理する...
+    callback();
+}
+
+function introduceBugs() {
+    // バグを作る
+}
+
+writeCode(introduceBugs);
+```
+
+- 引数を渡す時括弧がない点に注意
+- 括弧があると関数は実行されてしまう
+- この関数を実行するタイミングはwiriteCode()に任せる
+
+### 4.2.1 コールバックの例
+
+コールバックなしで初めて、後からリファクタリングをしてコールバックの動作を確認する
+
+**コールバックなし**
+
+```
+var findNodes = function () {
+    var i = 10000, // 果てしないループ
+        nodes = [], // ここに結果を格納
+        found; // 次のノード
+    while (i) {
+        i -= 1;
+        // 複雑なロジック
+        nodes.push(found);
+    }
+    return nodes;
+};
+
+var hide = function (nodes) {
+    var i = 0, max = nodes.length;
+    for (; i < max; i += 1) {
+        nodes[i].style.display = "none";
+    }
+};
+
+// この関数を実行
+hide(findNodes());
+```
+
+**コールバックあり**
+
+```
+var findNodes = function (callback) {
+    var i = 10000,
+        nodes = [],
+        found;
+
+    // callbackが呼び出しできるか検査
+    if (typeof callback !== "function") {
+        callback = false;
+    }
+
+    while (i) {
+        i -= 1;
+
+        // 複雑なロジック
+
+        // ここでコールバック
+        if (callback) {
+            callback(found);
+        }
+
+        nodes.push(found);
+    }
+    return nodes;
+};
+
+// コールバック関数
+var hide = function (node) {
+    node.style.display = "none";
+};
+
+// ノードを見つけたら隠す
+findNodes(hide);
+
+// 無名コールバックを渡すのも可能
+findNodes(function (node) {
+    node.style.display = "block";
+});
+```
+
+### 4.2.2 コールバックとスコープ
+
+コールバックメソッドが属しているオブジェクトを使う時予期せぬ振る舞いになる
+
+myappというオブジェクトのpaint()メソッドをコールバックとして使う状況を想定する
+
+```
+var myapp = {};
+myapp.color = "green";
+myapp.paint = function (node) {
+    node.style.color = this.color;
+}
+
+var findNodes = function (callback) {
+    // ...
+    if (typeof callback === "function") {
+        callback(found);
+    }
+    // ...
+}
+```
+
+この場合、findNodes(myapp.paint)の呼び出しはthis.colorが定義されていない為期待通りに動作しない。findNodes()はグローバル関数なので、オブジェクトthisはグローバルオブジェクトを参照する。この問題は、コールバック関すと一緒にこのコールバックが属しているオブジェクトを渡せば解決する。
+
+```
+findNodes(myapp.paint, myapp);
+
+var findNodes = function (callback, callback_obj) {
+    //...
+    if (typeof callback === "function") {
+        callback.call(callback_obj, found);
+    }
+    //...
+}
+```
+
+メソッドを文字列で渡すやり方もある
+
+```
+findNodes("paint", myapp);
+
+var findNodes = function (callback, callback_obj) {
+    if (typeob callback === "string") {
+        callback = callback_obj[callback];
+    }
+
+    //...
+    if (typeof callback === "function") {
+        callback.call(callback_obj, found);
+    }
+    //...
+};
+```
+
+### 4.2.3 非同期イベントリスナ
+
+```
+document.addEventListener("click", console.log, false);
+```
+
+- クライアント側でのプログラミングのほとんどはイベント駆動
+    - loadイベント、click、keypress、mouseover、moucemoveなど
+- コールバックを使うと非同期に実行可能
+
+
+### 4.2.4 タイムアウト
+
+ブラウザのwindowオブジェクトが提供するタイムアウトメソッドは、コールバックパターンの例
+
+```
+var thePlotThinkens = function () {
+    console.log('500ミリ秒後...');
+};
+setTimeout(thePlotThinkens, 500);
+```
+
+- 関数thePlotThinkensは変数として渡す（関数へのポインタを渡してるだけ）
+- 関数のポインタのかわりに文字列"thePlotThinkens"を渡すのはeval()と同じアンチパターン
+
+## 4.3 関数を返す
+
+関数はオブジェクトなので戻り値として使うことができる
+
+```
+var setup = function () {
+    alert(1);
+    return function () {
+        alert(2);
+    };
+};
+
+var my = setup(); // アラートで1が表示される
+my(); // アラートで2が表示される
+```
+
+クロージャーを使うとプライベートデータを格納することができる
+
+```
+var setup = function () {
+    var count = 0;
+    return function () {
+        return (count += 1);
+    };
+};
+
+var next = setup();
+next(); // 1が返る
+next(); // 2
+next(); // 3
+```
+
+## 4.4 自己定義関数
+
+関数の定義を動的に行い、変数に代入することができる
+
+```
+var scareMe = function () {
+    alert("Boo!");
+    scareMe = function () {
+        alert("Double boo!");
+    };
+};
+
+// 自己定義関数を使う
+scareMe(); // Boo!
+scareMe(); // Double boo!
+```
+
+関数に初期化による準備作業があり、その準備作業の実行を1回きりにする必要があるときに便利
+
+## 4.5 即時関数
+
+関数を定義したらすぐにその関数を実行するための構文
+
+即時関数は次の上の書き方と下の書き方があるがJSLintは最初の構文を推奨する
+
+```
+(function () {
+    alert('watch out!')
+}());
+
+(function () {
+    alert('watch out!')
+})();
+```
+
+```
+(function (){
+    var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        today = new Date(),
+        msg = 'Today is ' + days[today.getDay()] + ', ' + today.getDate();
+
+    alert(msg);
+}()); // Today is Fri, 13
+```
+
+このパターンは初期化のコードの為にスコープ上のサンドボックスを提供するのに役に立つ
+コードをすべてのローカルスコープに閉じ込め、グローバル変数がもれないようにすることができる
+
+### 4.5.1 即時関数のパラメータ
+
+即時関数に引数を渡すことができる
+
+// 以下が表示される
+// I met Joe Black on Fri Aug 13 2010 23:26:59 GMT-0800 (PST)
+
+```
+(function (who, when) {
+    console.log("I met " + who + " on " + when);
+}("joe Black", new Date()));
+```
+
+一般に、即時関数の引数にはグローバルオブジェクトを渡す
+
+### 4.5.2 即時関数からの戻り値
+
+即時関数も他の関数と同じように値を返すことができ、その戻り値は変数に代入できる
+
+```
+var result = (function () {
+    return 2 + 2;
+}());
+```
+
+関数を囲む括弧を省略しても同じ結果が得られる
+
+```
+var result = function () {
+    return 2 + 2;
+}();
+```
+
+これでも同じ結果が得られる
+
+```
+var result = (function () {
+    return 2 + 2;
+})();
+```
+
+即時関数は以下のようにあらゆる方の値を返すことができる
+
+```
+var getResult = (function () {
+    var res = 2 + 2;
+    return function () {
+        return res;
+    }
+}());
+```
+
+即時関数はオブジェクトのプロパティを定義するときにも使える
+
+```
+var o = {
+    message: (function () {
+        var who = "me",
+            what = "call";
+        return what + " " + who;
+    }()),
+    getMsg: function () {
+        return this.message;
+    }
+}
+
+o.getMsg(); // call me
+o.message; // call me
+```
+
+### 4.5.3 利点と使い方
+
+- グローバル変数を残さずにしたい作業を包める
+
+## 4.6 即時オブジェクト初期化
+
+グローバルスコープを汚染から保護するもうひとつの方法に即時オブジェクト初期化パターンがある
+
+```
+({
+    maxwidth: 600,
+    maxheight: 400,
+
+    gimmeMax: function () {
+        return this.maxwidth + "x" + this.maxheight;
+    },
+
+    init: function() {
+        console.log(this.gimmeMax());
+        // その他の初期化作業
+    }
+
+}).init();
+```
+
+- 1回きりの初期化作業を実行する間グローバル名前空間を保護する
+
+## 4.7 初期化時分岐
+
+初期化時分岐は最適化のパターン
+
+```
+// 変更前
+var utils = {
+    addListener: function (el, type, fn) {
+        if (typeof window.addEventListener === 'function') {
+            el.addEventListener(type, fn, false);
+        } else if (typeof document.attachEvent === 'function') { // IE
+            el.attachEvent('on' + type, fn);
+        } else { // order browsers
+            el['on' + type] = fn
+        }
+    },
+    removeListener: function (el, type, fn) {
+        // 同様の処理
+    }
+};
+```
+
+このコードは非効率で、utils.addListener()やutils.removeListener()を呼ぶたびに同じ検査が何度も繰り返し実行されてしまう。
+初期化分岐を使えば、ブラウザ機能の検査はスクリプトが読み込まれる際に1回だけですむ。
+
+```
+// 変更後
+
+// インターフェース
+var utils = {
+    addListener: null,
+    removeListener: null,
+};
+
+// 実装
+if (typeof window.addEventListener === 'function') {
+    utils.addListener = function (el, type, fn) {
+        el.addEventListener(type, fn, false);
+    };
+    utils.removeListener = function (el, type, fn) {
+        el.removeEventListener(type, fn, false);
+    }
+} else if (typeof document.attachEvent === 'function') { // IE
+    utils.addListener = function (el, type, fn) {
+        el.addEventListener('on' + type, fn);
+    };
+    utils.removeListener = function (el, type, fn) {
+        el.removeEventListener('on' + type, fn);
+    };
+} else { //その他のブラウザ
+    utils.addListener = function (el, type, fn) {
+        el['on' + type] = fn;
+    };
+    utils.removeListener = function (el, type, fn) {
+        el['on' + type] = null;
+    }
+}
+```
 
 ## 4.8 関数プロパティによるメモ化パターン
 
+- 関数はオブジェクトなのでプロパティを持つことができる
+- 関数はすぐに使えるプロパティとメソッドを持っている
 
+関数の引数を取得するlengthプロパティが自動的に与えられる
+
+```
+function func(a, b, c) {}
+console.log(func.length); // 3
+```
+
+**メモ化(memoization)**
+- 関数の結果をキャッシュすること
+
+次はメモ化の例
+
+```
+var myFunc = function (param) {
+    if (!myFunc.cache[param]) {
+        var result = {};
+        // ...重たい処理...
+        myFunc.cache[param] = result;
+    }
+};
+
+// キャッシュの記憶領域
+myFunc.cache = {};
+```
+
+- 関数myFuncはmyFunc.cacheでアクセスできるプロパティcacheを作る
+- cacheプロパティはオブジェクト(ハッシュ)で、この関数に渡されたパラメータparamをキーとしその計算結果を値にする
+- 必要に応じていくらでも複雑なデータ構造にすることができる
+
+上記コードは、関数が取る引数はparamだけであり、プリミティブのデータ型(文字列など)であることが前提で、
+パラメータを増やして複雑にするときは、それらをシリアライズすることが一般的な解
+
+以下の例は引数オブジェクトをJSONデータにシリアライズしcacheオブジェクトのキーとしてそのデータを使っている
+
+```
+var myFunc = function () {
+
+    var cachekey = JSON.stringify(Array.prototype.slice.call(arguments)),
+        result;
+
+    if (!myFunc.cache[cachekey]) {
+        result = {};
+        // ...重たい処理...
+        myFunc.cache[cachekey] = result;
+    }
+    return myFunc.cache[cachekey];
+};
+
+// キャッシュの記憶領域
+myFunc.cache = {};
+```
+
+シリアライズするとオブジェクトの一意性が失われるので注意が必要
+※ 2つの異なるオブジェクトでプロパティがまったく同じ場合キャッシュのエントリも同じになってしまう
 
 ## 4.9 設定オブジェクト
 
@@ -71,7 +690,7 @@ sayHi.apply(null, ["hello"]); // Hello, hello!
 ```
 
 - 関数の呼び出しも関数の適用も同じ結果が得られる
-- apply()にはパラメータが 2つある
+- apply()にはパラメータが2つある
     - 関数の内部でthisに束縛されるオブジェクト
     - 配列で関数の内部で利用可能なargumentsのようなオブジェクト
 - 最初のパラメータがnullの場合、thisはグローバルオブジェクトを指す
