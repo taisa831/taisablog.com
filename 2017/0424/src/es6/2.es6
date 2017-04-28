@@ -33,3 +33,19 @@ for (let [k, v] of m) {
     // K1 v1
     // k2 v2
 }
+
+var syml = Symbol();
+console.log(typeof syml); // symbol
+
+var syml2 = Symbol("foo");
+syml2.toString(); // Symbol(foo)
+
+console.log(syml2 === Symbol("foo")); // false
+
+var obj = {[syml2]: 1};
+Object.keys(obj); // []
+Object.getOwnPropertySymbols(obj); // [Symbol(foo)]
+
+exports.foo = "foo!";
+
+var mod = require("./module");
