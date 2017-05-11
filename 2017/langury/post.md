@@ -77,11 +77,72 @@ wikipediaでは上記のように年代別に分かれていて見やすかっ�
 - スタック指向言語
 
 #### [Pascal](https://ja.wikipedia.org/wiki/Pascal)
+- [ニクラウス・ヴィルト](https://ja.wikipedia.org/wiki/%E3%83%8B%E3%82%AF%E3%83%A9%E3%82%A6%E3%82%B9%E3%83%BB%E3%83%B4%E3%82%A3%E3%83%AB%E3%83%88)の設計（デザイン）による言語
+- 登場時期は1970年
+- 名前は、哲学者・数学者・科学者で、機械式計算機を製作するなど技術者でもあったブレーズ・パスカルにあやかったもの
 
+#### [C](https://ja.wikipedia.org/wiki/C%E8%A8%80%E8%AA%9E)
+- 1972年にAT&Tベル研究所の[デニス・リッチー](https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%8B%E3%82%B9%E3%83%BB%E3%83%AA%E3%83%83%E3%83%81%E3%83%BC)が主体となって開発した言語
+- AT&Tベル研究所の[ケン・トンプソン](https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%B3%E3%83%BB%E3%83%88%E3%83%B3%E3%83%97%E3%82%BD%E3%83%B3)が開発したB言語の改良として誕生した
+
+#### [Prolog](https://ja.wikipedia.org/wiki/Prolog)
+- 1972年ごろにフランスのアラン・カルメラウアーとフィリップ・ルーセルによって考案された非手続き型言語
+- 名称は、「論理を使ったプログラミング」を意味するフランス語「programmation en logique」に由来
+
+#### [Smalltalk](https://ja.wikipedia.org/wiki/Smalltalk)
+- 1972年に開発が開始され1980年に公開された
+- Simulaのオブジェクト（およびクラス）、LISPの徹底した動的性、LOGOのタートル操作や描画機能に、アラン・ケイの「メッセージング」というアイデアを組み合わせて作られたクラスベースの純粋オブジェクト指向言語
+
+#### [Scheme](https://ja.wikipedia.org/wiki/Scheme)
+- 構文スコープを持つLISPの方言の1つ
+- 登場時期は1975年
+
+#### [ML](https://ja.wikipedia.org/wiki/ML_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E))
+- 関数型言語の1つであるが、純粋関数型でない特徴や機能を持つ
+- 登場時期は1970年代
+
+#### [AWK](https://ja.wikipedia.org/wiki/AWK)
+- ベル研究所におけるUNIX開発の過程で、sedやgrepのようなテキスト処理ツールに演算機能を持たせた拡張ツールとして開発された
+
+#### [Ada](https://ja.wikipedia.org/wiki/Ada)
+- 強力な言語機能を豊富に持ち、高度な型の体系をもつ言語の1つで構文はAlgol系
+- 史上初のプログラマとされる[エイダ・ラブレス](https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%A4%E3%83%80%E3%83%BB%E3%83%A9%E3%83%96%E3%83%AC%E3%82%B9)の名前にちなんでAdaと命名されている
+- 登場時期は1983年で設計者は[ジャン・イシュビア](https://ja.wikipedia.org/w/index.php?title=%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%BB%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%93%E3%82%A2&action=edit&redlink=1)
 
 ### 1980年代
 
+#### [C++](https://ja.wikipedia.org/wiki/C%2B%2B)
+- 汎用プログラミング言語の1つ
+- 1983年にベル研究所のコンピュータ科学者の[ビャーネ・ストロヴストルップ](https://ja.wikipedia.org/wiki/%E3%83%93%E3%83%A3%E3%83%BC%E3%83%8D%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AD%E3%83%B4%E3%82%B9%E3%83%88%E3%83%AB%E3%83%83%E3%83%97)が、C言語の拡張として開発した
+
+#### [Objective-C](https://ja.wikipedia.org/wiki/Objective-C)
+- C言語をベースにSmalltalk型のオブジェクト指向機能を持たせた上位互換言語
+- NeXT、macOSのOSに標準付属する公式開発言語
+- 1983年に[ブラッド・コックス](https://ja.wikipedia.org/w/index.php?title=%E3%83%96%E3%83%A9%E3%83%83%E3%83%89%E3%83%BB%E3%82%B3%E3%83%83%E3%82%AF%E3%82%B9&action=edit&redlink=1)によって開発された
+
+#### [Common Lisp](https://ja.wikipedia.org/wiki/Common_Lisp)
+- 関数型言語でLISP方言の一種
+- 登場時期1984年で1994年にANSIにより標準化された
+
+#### [Eiffel](https://ja.wikipedia.org/wiki/Eiffel)
+- 頑健なソフトウェアの生産に注力したオブジェクト指向言語
+- 1985年に[バートランド・メイヤー](https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%BC%E3%83%88%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%83%A1%E3%82%A4%E3%83%A4%E3%83%BC)によって考案された
+- 言語名の由来は、エッフェル塔ではなく、その設計者[ギュスターヴ・エッフェル](https://ja.wikipedia.org/wiki/%E3%82%AE%E3%83%A5%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%B4%E3%83%BB%E3%82%A8%E3%83%83%E3%83%95%E3%82%A7%E3%83%AB)
+
+#### [Erlang](https://ja.wikipedia.org/wiki/Erlang)
+- 汎用的な用途に使うことができる並行処理指向言語および実行環境
+- 直列処理のサブセットの言語は、関数型言語
+- 登場時期は1986年で開発者は[エリクソン](https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%AA%E3%82%AF%E3%82%BD%E3%83%B3)
+- Erlangは数学者の[アグナー・アーラン](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B0%E3%83%8A%E3%83%BC%E3%83%BB%E3%82%A2%E3%83%BC%E3%83%A9%E3%83%B3)から名前をとって命名された
+
+#### [Perl](https://ja.wikipedia.org/wiki/Perl)
+- [ラリー・ウォール](https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%AA%E3%83%BC%E3%83%BB%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB)によって開発された言語
+- 登場時期は1987年
+- 実用性と多様性を重視しており、C言語やsed、awk、シェルスクリプトなど他のプログラミング言語の優れた機能を取り入れている
+
 ### 1990年代
+
+
 
 ### 2000年代
 
