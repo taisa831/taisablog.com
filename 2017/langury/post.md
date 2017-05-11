@@ -1,4 +1,4 @@
-「まつもとゆきひろ 言語のしくみ」と「Talk Python #100」のGuidoの回をたまたま同時期に見聞きしたら言語の歴史が知りたくなった。言語は様々存在するがそれらは少なからず他の言語の影響を受け他の言語に影響を与えている。なのでその影響関係をwikipediaの情報を元に見える化してみた。
+「まつもとゆきひろ 言語のしくみ」と「Talk Python #100」のGuidoの回をたまたま同時期に見聞きしたら言語の歴史が知りたくなった。言語は様々存在するがそれらは少なからず他の言語から影響を受け、他の言語に影響を与えている。なのでその影響関係をwikipediaの情報を元に見える化してみた。
 
 <img src="http://taisablog.com/wp-content/uploads/2017/05/1.jpg" alt="" width="1259" height="2005" class="aligncenter size-full wp-image-454" />
 
@@ -10,7 +10,7 @@
 <blockquote class="embedly-card"><h4><a href="https://github.com/taisa831/Langury">taisa831/Langury</a></h4><p>Contribute to Langury development by creating an account on GitHub.</p></blockquote>
 <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 
-ここで取り上げた言語は今のところwikipediaのこの部分を対象にしている。
+ここで取り上げた言語は今のところwikipediaにある以下を対象にしている。
 
 <img src="http://taisablog.com/wp-content/uploads/2017/05/3f7fc114e4606850a9cc05ca98f152cf.png" alt="" width="1217" height="265" class="aligncenter size-full wp-image-458" />
 
@@ -46,7 +46,7 @@ wikipediaでは上記のように年代別に分かれていて見やすかっ�
 #### [BASIC](https://ja.wikipedia.org/wiki/BASIC)
 - 1964年、米国ダートマス大学にて、数学者ジョン・ケメニーとトーマス・カーツにより、教育用などを目的としてダートマスBASICが開発された
 - 初心者向けのプログラミング言語として、1970年代以降のコンピュータ（特にパソコン）で広く使われた
-- Windowsアプリケーションの主力開発言語であるVisual Basicの文法に影を残している
+- Windowsアプリケーションの主力な開発言語であるVisual Basicの文法に影を残している
 
 #### [PL/I](https://ja.wikipedia.org/wiki/PL/I)
 - 「programming language one」に由来する（ピーエルワン）
@@ -72,6 +72,12 @@ wikipediaでは上記のように年代別に分かれていて見やすかっ�
 - トンプソン自身とデニス・リッチー、ブライアン・カーニハンによって改良を加えられ、NewB(NB)を経てC言語へと発展した
 
 ### 1970年代
+
+#### [Forth](https://ja.wikipedia.org/wiki/Forth)
+- スタック指向言語
+
+#### [Pascal](https://ja.wikipedia.org/wiki/Pascal)
+
 
 ### 1980年代
 
@@ -118,7 +124,7 @@ wikipediaでは上記のように年代別に分かれていて見やすかっ�
 #### [Elixir](https://ja.wikipedia.org/wiki/Elixir_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E))
 - José Valimによて開発され2012年に登場した
 - 並行処理の機能や関数型といった特徴を持つ、Erlangの仮想マシン (BEAM) 上で動作するコンピュータプログラミング言語
-- Erlangで実装されているため、分散システム、耐障害性、ソフトリアルタイムシステム等の機能を使用することができる
+- Erlangで実装されているため、分散システム、耐障害性、ソフトリアルタイムシステム等の機能が利用できる
 - 拡張機能として、マクロを使ったメタプログラミング、そしてポリモーフィズムなどのプログラミング・パラダイムもプロトコルを介して実装されている
 
 #### [Hack](https://ja.wikipedia.org/wiki/Hack_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E))
