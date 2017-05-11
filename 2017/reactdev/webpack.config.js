@@ -1,6 +1,11 @@
+const path = require('path');
+
 module.exports = {
-    entry: { js: './src/counter.js'},
-    output: { path: '/Users/satoumasaki/Documents/workspaces/taisablog.com/2017/reactdev/public/', filename: 'bundle.js'},
+    entry: { js: './src/counter-flux.js'},
+    output: {
+        path: path.resolve(__dirname, 'public'),
+        filename: 'bundle.js'
+    },
     module: {
         loaders: [
             {
@@ -12,7 +17,7 @@ module.exports = {
     },
     devtool: 'source-map',
     devServer: {
-        contentBase: '/Users/satoumasaki/Documents/workspaces/taisablog.com/2017/reactdev/public/',
+        contentBase: path.resolve(__dirname, 'public'),
         port: 8080,
         inline: true,
         historyApiFallback: true
