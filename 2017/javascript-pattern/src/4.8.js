@@ -11,6 +11,9 @@ var myFunc = function (param) {
 // キャッシュの記憶領域
 myFunc.cache = {};
 
+myFunc('a');
+myFunc('a');
+
 // -----------------------------------------------------------------------------
 
 var myFunc = function () {
@@ -28,3 +31,6 @@ var myFunc = function () {
 
 // キャッシュの記憶領域
 myFunc.cache = {};
+
+myFunc({'a': 'b'});
+myFunc({'a': 'b'});
