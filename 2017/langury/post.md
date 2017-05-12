@@ -12,7 +12,7 @@
 
 ここで取り上げた言語は今のところwikipediaにある以下を対象にしている。
 
-<img src="http://taisablog.com/wp-content/uploads/2017/05/3f7fc114e4606850a9cc05ca98f152cf.png" alt="" width="1217" height="265" class="aligncenter size-full wp-image-458" />
+<a href="http://taisablog.com/wp-content/uploads/2017/05/3f7fc114e4606850a9cc05ca98f152cf.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/3f7fc114e4606850a9cc05ca98f152cf.png" alt="" width="1217" height="265" class="aligncenter size-full wp-image-458" /></a>
 
 ## 言語について
 wikipediaでは上記のように年代別に分かれていて見やすかったのでそのくくりでみてみる。
@@ -142,6 +142,44 @@ wikipediaでは上記のように年代別に分かれていて見やすかっ�
 
 ### 1990年代
 
+#### [Python](https://ja.wikipedia.org/wiki/Python)
+汎用のプログラミング言語である。コードがシンプルで扱いやすく設計され、C言語などに比べて、さまざまなプログラムを分かりやすく、少ないコード行数で書けるといった特徴がある。1991年にオランダ人の[グイド・ヴァンロッサム](https://ja.wikipedia.org/wiki/%E3%82%B0%E3%82%A4%E3%83%89%E3%83%BB%E3%83%B4%E3%82%A1%E3%83%B3%E3%83%AD%E3%83%83%E3%82%B5%E3%83%A0)が開発した。名前の由来はイギリスのテレビ局BBCが製作したコメディ番組『空飛ぶモンティ・パイソン』。
+
+#### [Tcl/Tk](https://ja.wikipedia.org/wiki/Tcl/Tk)
+ティクル・ティーケーはスクリプト言語Tclと、そのGUIツールキットTkを指す。Tclがカリフォルニア大学バークレー校のジョン・ケネス・オースターハウト博士により最初に開発され、TkはTclように開発され、1990年代初頭にTclにバンドルされる形で公開された。
+
+#### [Haskell](https://ja.wikipedia.org/wiki/Haskell)
+非正格な評価を特徴とする純粋関数型言語である。名称は数学者であり論理学者である[ハスケル・カリー](https://ja.wikipedia.org/wiki/Haskell)に由来する。高階関数や静的多相型付け、定義可能な演算子、例外処理といった多くの言語で採用されている現代的な機能に加え、パターンマッチングやカリー化、リスト内包表記、ガードといった多くの特徴的な機能を持っている。最初の版の Haskell（Haskell 1.0）は1990年に作成された。
+
+#### [Visual Basic](https://ja.wikipedia.org/wiki/Microsoft_Visual_Basic)
+マイクロソフトが1990年代に開発していたプログラミング言語およびその処理系。
+
+#### [Ruby](https://ja.wikipedia.org/wiki/Ruby)
+[まつもとゆきひろ（通称 Matz）](https://ja.wikipedia.org/wiki/%E3%81%BE%E3%81%A4%E3%82%82%E3%81%A8%E3%82%86%E3%81%8D%E3%81%B2%E3%82%8D)により開発されたオブジェクト指向スクリプト言語。1995年12月にfj上で発表された。名称のRubyは、プログラミング言語Perlが6月の誕生石であるPearl（真珠）と同じ発音をすることから、まつもとの同僚の誕生石（7月）のルビーを取って名付けられた。
+
+#### [Lua](https://ja.wikipedia.org/wiki/Lua)
+リオデジャネイロ・カトリカ大学の、主としてDepartment of Computer Science（コンピュータ科学科）and・or Computer Graphics Technology Group (Tecgraf) に属する、Roberto Ierusalimschy, Waldemar Celes, Luiz Henrique de Figueiredoらによって設計開発されたスクリプト言語およびその処理系の実装。手続き型言語として、また、プロトタイプベースのオブジェクト指向言語としても利用することができ、関数型言語、データ駆動型としての要素も併せ持っている。Luaという名前は、ポルトガル語の月に由来する。 
+
+#### [Delphi](https://ja.wikipedia.org/wiki/Delphi)
+Delphi（デルファイ）は、コンソール (CUI)、デスクトップ (GUI)、Web、モバイルアプリケーション開発のための統合開発環境 (IDE)で1995年に登場した 。DelphiのコンパイラはPascalを独自に拡張したObject Pascal (Delphi 言語) を用いて、プラットフォーム毎にネイティブコードを生成する (Windows, macOS, iOS, Android)。
+
+#### [Java](https://ja.wikipedia.org/wiki/Java)
+JavaおよびJavaプラットフォームは、1990年代前半当時、サン・マイクロシステムズに居た[ジェームズ・ゴスリン](https://ja.wikipedia.org/wiki/%E3%82%B8%E3%82%A7%E3%83%BC%E3%83%A0%E3%82%BA%E3%83%BB%E3%82%B4%E3%82%B9%E3%83%AA%E3%83%B3)、[ビル・ジョイ](https://ja.wikipedia.org/wiki/%E3%83%93%E3%83%AB%E3%83%BB%E3%82%B8%E3%83%A7%E3%82%A4)などの人々によって設計・開発された。それ以前のさまざまな言語の良い部分を引き継ぎ、欠点を克服するよう設計され、オブジェクトモデルはSmalltalkやObjective-Cと同様の簡潔なものを採用している。
+
+#### [JavaScript](https://ja.wikipedia.org/wiki/JavaScript)
+JavaScriptはネットスケープコミュニケーションズの[ブレンダン・アイク](https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%AC%E3%83%B3%E3%83%80%E3%83%B3%E3%83%BB%E3%82%A2%E3%82%A4%E3%82%AF)によって開発され、Netscape Navigator 2.0で実装された。開発当初はLiveScriptと呼ばれていたが、1995年にサン・マイクロシステムズ（現・オラクル）が開発したプログラミング言語Javaが当時大きな注目を浴びており、ネットスケープとサン・マイクロシステムズが業務提携していた事もあったため、JavaScriptという名前に変更された。
+
+#### [PHP](https://ja.wikipedia.org/wiki/PHP_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E))
+"The PHP Development Team" によってコミュニティベースで開発されているオープンソースの汎用プログラミング言語であり、特にサーバーサイドで動的なウェブページ作成するための機能を多く備える。 名称のPHPは再帰的頭字語である"PHP: Hypertext Preprocessor"を意味し、「PHPはHTMLのプリプロセッサである」とPHP自身を再帰的に説明している。 元々は「個人的なホームページ」を意味する英語の"Personal Home Page"に由来し、プログラムが大きく書き直されたバージョン3から現在の意味となった。設計者は[ラスマス・ラードフ](https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%B9%E3%83%9E%E3%82%B9%E3%83%BB%E3%83%A9%E3%83%BC%E3%83%89%E3%83%95)で、登場時期は1995年。
+
+#### [OCaml](https://ja.wikipedia.org/wiki/OCaml)
+オーキャムル、オーキャメルは、フランスの[INRIA](https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E5%9B%BD%E7%AB%8B%E6%83%85%E5%A0%B1%E5%AD%A6%E8%87%AA%E5%8B%95%E5%88%B6%E5%BE%A1%E7%A0%94%E7%A9%B6%E6%89%80)が開発したプログラミング言語MLの方言とその実装。MLの各要素に加え、オブジェクト指向的要素の追加が特長である。かつてはObjective Camlという名前で、その略としてOCamlと広く呼ばれていたが、正式にOCamlに改名された。登場時期は1996年。
+
+#### [SuperCollider](https://ja.wikipedia.org/wiki/SuperCollider)
+音響合成用プログラミング環境および言語。オブジェクト指向型で、リアルタイム音響合成とアルゴリズミック・コンポジションに特化している。SuperColliderは、1996年にJames McCartneyによって開発・発表された。
+
+#### [R](https://ja.wikipedia.org/wiki/R%E8%A8%80%E8%AA%9E)
+オープンソース・フリーソフトウェアの統計解析向けのプログラミング言語及びその開発実行環境。ニュージーランドのオークランド大学の[Ross Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka)と[Robert Clifford Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician))により作られた。R言語のソースコードは主にC言語、FORTRAN、そしてRによって開発された。
 
 
 ### 2000年代
@@ -198,4 +236,6 @@ wikipediaでは上記のように年代別に分かれていて見やすかっ�
 
 [amazonjs asin="4822239179" locale="JP" title="まつもとゆきひろ 言語のしくみ"]
 
-[podcast]
+<iframe width="100%" height="166" scrolling="no" frameborder="no"
+     src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/309118827&color=ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
+</iframe>
