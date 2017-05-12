@@ -37,7 +37,7 @@ wikipediaでは上記のように年代別に分かれていて見やすかっ�
 
 ### 1960年代
 
-#### [CPL）](https://ja.wikipedia.org/wiki/CPL_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E))
+#### [CPL](https://ja.wikipedia.org/wiki/CPL_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E))
 - Combined Programming Language、「統合プログラミング言語」の意
 - C言語の遠い祖先となった言語
 - CPLはケンブリッジ大学の数学研究所とロンドン大学コンピュータ部の共同プロジェクトとして1960年代に開発された
