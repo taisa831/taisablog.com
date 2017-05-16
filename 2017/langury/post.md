@@ -1,8 +1,8 @@
-「<a href="https://www.amazon.co.jp/%E3%81%BE%E3%81%A4%E3%82%82%E3%81%A8%E3%82%86%E3%81%8D%E3%81%B2%E3%82%8D-%E8%A8%80%E8%AA%9E%E3%81%AE%E3%81%97%E3%81%8F%E3%81%BF-ebook/dp/B01N7JZXMD?SubscriptionId=AKIAJPATVFHYPKSNTR4A&amp;tag=joghmasami-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B01N7JZXMD" title="まつもとゆきひろ 言語のしくみ" target="_blank">まつもとゆきひろ 言語のしくみ</a>」と「<a href="https://talkpython.fm/episodes/show/100/python-past-present-and-future-with-guido-van-rossum" target="_blank">Talk Python #100</a>」のGuidoの回をたまたま同時期に見聞きしたら言語の歴史が調べたくなった。言語は様々存在するけどそれらは少なからず他の言語から影響を受けたり、他の言語に影響を与えたりしている。ということでその影響関係をwikipediaの情報を元に見える化してみた。
+「<a href="https://www.amazon.co.jp/%E3%81%BE%E3%81%A4%E3%82%82%E3%81%A8%E3%82%86%E3%81%8D%E3%81%B2%E3%82%8D-%E8%A8%80%E8%AA%9E%E3%81%AE%E3%81%97%E3%81%8F%E3%81%BF-ebook/dp/B01N7JZXMD?SubscriptionId=AKIAJPATVFHYPKSNTR4A&amp;tag=joghmasami-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B01N7JZXMD" title="まつもとゆきひろ 言語のしくみ" target="_blank">まつもとゆきひろ 言語のしくみ</a>」と「<a href="https://talkpython.fm/episodes/show/100/python-past-present-and-future-with-guido-van-rossum" target="_blank">Talk Python #100</a>」のGuidoの回をたまたま同時期に見聞きしたら言語の歴史を調べたくなった。言語は少なからず他の言語から影響を受けたり、他の言語に影響を与えたりしている。ということでその影響関係をwikipediaの情報を元に見える化してみた。
 
-<a href="http://taisablog.com/wp-content/uploads/2017/05/screencapture-file-Users-satoumasaki-Documents-workspaces-Langury-html-inherits-html-1494845354189.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/screencapture-file-Users-satoumasaki-Documents-workspaces-Langury-html-inherits-html-1494845354189.png" alt="" width="1440" height="2440" class="aligncenter size-full wp-image-507" /></a>
+<a href="http://taisablog.com/wp-content/uploads/2017/05/all.jpg"><img src="http://taisablog.com/wp-content/uploads/2017/05/all.jpg" alt="" width="1440" height="2212" class="aligncenter size-full wp-image-576" /></a>
 
-ぐちゃ〜。。。これだけ見ると複雑に絡み合ってよくわからないけど見たい言語をクリックすると、以下のようにどの言語に影響を受けどの言語に影響を与えたかが見えるようになる。また影響を受けた言語がさらにどの言語に影響を受けたというのもひと目で分かる。
+ぐちゃ〜。。。これだけ見ると複雑に絡み合ってよくわからない。ただ見たい言語をクリックするとその言語がフォーカスされどの言語がどの言語に影響を与えどの言語に影響を受けたかが見やすくなる。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/1989466d3d1d72210569651b013b3dec.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/1989466d3d1d72210569651b013b3dec.png" alt="" width="619" height="804" class="aligncenter size-full wp-image-509" /></a>
 
@@ -18,23 +18,23 @@
 
 ## インストール
 
-DoxygenとGraphvizをインストールする
+DoxygenとGraphvizをインストールする。
 
 ```
 brew install doxygen
 brew install graphviz
 ```
 
-Languryをクローンする
+Languryをクローンする。
 
 ```
 git clone git@github.com:taisa831/Langury.git
 cd Langury
 ```
 
-## 使い方
+## 出力
 
-doxygenコマンドを実行してHTMLを出力して開く
+doxygenコマンドを実行してHTMLを出力して開く。
 
 <pre>
 doxygen
@@ -43,7 +43,10 @@ select Classes -> Class Hierarchy
 </pre>
 
 ### 対象言語
-ここで取り上げた言語は今のところwikipediaにある以下を対象にしている。※一部記載なし
+
+ここで取り上げた言語はwikipediaの以下を対象にした。
+<small>※一部記載なし。</small>
+<small>※実際とは異なっていたり足りてない箇所があるご注意ください。</small>
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/3f7fc114e4606850a9cc05ca98f152cf.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/3f7fc114e4606850a9cc05ca98f152cf.png" alt="" width="1217" height="265" class="aligncenter size-full wp-image-458" /></a>
 
@@ -65,12 +68,12 @@ select Classes -> Class Hierarchy
 <a href="http://taisablog.com/wp-content/uploads/2017/05/fortran.jpg"><img src="http://taisablog.com/wp-content/uploads/2017/05/fortran.jpg" alt="" width="1578" height="867" class="aligncenter size-full wp-image-511" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/LISP' name='LISP'>LISP</a>
-1958年に[ジョン・マッカーシー](https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%9E%E3%83%83%E3%82%AB%E3%83%BC%E3%82%B7%E3%83%BC)によってはじめて設計され、高水準プログラミング言語の中ではFORTRANに次いで2番目に古い。LISPの名前は「list processor」に由来している。
+1958年に[ジョン・マッカーシー](https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%9E%E3%83%83%E3%82%AB%E3%83%BC%E3%82%B7%E3%83%BC)によってはじめて設計された。高水準プログラミング言語の中ではFORTRANに次いで2番目に古い。LISPの名前は「list processor」に由来している。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Lisp.jpg"><img src="http://taisablog.com/wp-content/uploads/2017/05/Lisp.jpg" alt="" width="1005" height="1547" class="aligncenter size-full wp-image-515" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/ALGOL' name='ALGOL'>ALGOL</a>
-1950年代中ごろに開発され、多くの言語に影響を及ぼし、ACMや教科書や学術論文などでアルゴリズム記述のデファクトスタンダードとして30年以上使われ、ほぼ同世代の高水準言語であるFORTRAN、LISP、COBOLに比べて最も成功した。設計者はバウアー、 ルティシュハウザー、 サメルソン、 バッカス、 パリス、 ナウア、 ファン・ワインハールデン、 マッカーシー他。FORTRANで明らかとなった問題を防ぐよう設計され、BCPL、B、Pascal、Simula、Cといった様々なプログラミング言語に影響を与えた。-「ALGOL」は「アルゴリズム言語」を意味する英語「algorithmic language」に由来する。
+1950年代中ごろに開発され、多くの言語に影響を及ぼした。ACMや教科書や学術論文などでアルゴリズム記述のデファクトスタンダードとして30年以上使われ、ほぼ同世代の高水準言語であるFORTRAN、LISP、COBOLに比べて最も成功した。設計者はバウアー、 ルティシュハウザー、 サメルソン、 バッカス、 パリス、 ナウア、 ファン・ワインハールデン、 マッカーシー他。FORTRANで明らかとなった問題を防ぐよう設計された。「ALGOL」は「アルゴリズム言語」を意味する英語「algorithmic language」に由来する。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Algol.jpg"><img src="http://taisablog.com/wp-content/uploads/2017/05/Algol.jpg" alt="" width="1584" height="1035" class="aligncenter size-full wp-image-513" /></a>
 
@@ -87,12 +90,12 @@ CPLはケンブリッジ大学の数学研究所とロンドン大学コンピ�
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Cpl.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Cpl.png" alt="" width="951" height="867" class="aligncenter size-full wp-image-523" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/BASIC' name='BASIC'>BASIC</a>
-1964年、米国ダートマス大学にて、数学者ジョン・ケメニーとトーマス・カーツにより、教育用などを目的としてダートマスBASICが開発された。初心者向けのプログラミング言語として、1970年代以降のコンピュータ（特にパソコン）で広く使われた。Windowsアプリケーションの主力な開発言語であるVisual Basicの文法に影を残している。
+1964年に米国ダートマス大学にて数学者ジョン・ケメニーとトーマス・カーツにより教育用などを目的としてダートマスBASICが開発された。初心者向けのプログラミング言語として、1970年代以降のコンピュータ（特にパソコン）で広く使われた。Windowsアプリケーションの主力な開発言語であるVisual Basicの文法に影を残している。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Basic.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Basic.png" alt="" width="259" height="166" class="aligncenter size-full wp-image-522" /></a>
 
 #### <a href=https://ja.wikipedia.org/wiki/PL/I name='PL'>PL/I</a>
-1964年に生まれ、教育機関、商用、工業で使用され現在も使われている。「programming language one」（ピーエルワン）に由来する。
+1964年に生まれ。教育機関、商用、工業で使用され現在も使われている。「programming language one」（ピーエルワン）に由来する。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/PLI.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/PLI.png" alt="" width="948" height="796" class="aligncenter size-full wp-image-521" /></a>
 
@@ -102,12 +105,12 @@ Basic Combined Programming Language、Basic-CPLは、1966年にケンブリッ�
 <a href="http://taisablog.com/wp-content/uploads/2017/05/BCPL.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/BCPL.png" alt="" width="948" height="865" class="aligncenter size-full wp-image-520" /></a>
 
 #### <a href=https://ja.wikipedia.org/wiki/Simula name='Simula'>Simula</a>
-[オルヨハン・ダール](https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%AB%E3%83%A8%E3%83%8F%E3%83%B3%E3%83%BB%E3%83%80%E3%83%BC%E3%83%AB)と[クリステン・ニガード](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%86%E3%83%B3%E3%83%BB%E3%83%8B%E3%82%AC%E3%83%BC%E3%83%89)によってALGOL60を拡張する形で1960年代に開発が始められたシミュレーション用途のプログラミング言語（登場時期は1967年）。最初期のオブジェクト指向言語であるとも言われる。
+[オルヨハン・ダール](https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%AB%E3%83%A8%E3%83%8F%E3%83%B3%E3%83%BB%E3%83%80%E3%83%BC%E3%83%AB)と[クリステン・ニガード](https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%86%E3%83%B3%E3%83%BB%E3%83%8B%E3%82%AC%E3%83%BC%E3%83%89)によってALGOL60を拡張する形で1960年代に開発が始められたシミュレーション用途のプログラミング言語（登場時期は1967年）。世界最初のオブジェクト指向言語であると言われる。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Simula.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Simula.png" alt="" width="1070" height="655" class="aligncenter size-full wp-image-519" /></a>
 
-#### <a href='https://ja.wikipedia.org/wiki/LOGO' name='LOGO'>LOGO<a>
-1967年に教育（特に構成主義教育）のために、ダニエル・G・ボブロウ、Wally Feurzeig、シーモア・パパート、シンシア・ソロモンによって開発された。名称はギリシャ語のlogos（言葉）に由来する
+#### <a href='https://ja.wikipedia.org/wiki/LOGO' name='LOGO'>LOGO</a>
+1967年に教育（特に構成主義教育）のために、ダニエル・G・ボブロウ、Wally Feurzeig、シーモア・パパート、シンシア・ソロモンによって開発された。名称はギリシャ語のlogos（言葉）に由来する。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Logo.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Logo.png" alt="" width="869" height="522" class="aligncenter size-full wp-image-518" /></a>
 
@@ -124,12 +127,12 @@ AT&Tベル研究所の[ケン・トンプソン](https://ja.wikipedia.org/wiki/%
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Forth.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Forth.png" alt="" width="203" height="162" class="aligncenter size-full wp-image-533" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/Pascal' name='Pascal'>Pascal</a>
-- [ニクラウス・ヴィルト](https://ja.wikipedia.org/wiki/%E3%83%8B%E3%82%AF%E3%83%A9%E3%82%A6%E3%82%B9%E3%83%BB%E3%83%B4%E3%82%A3%E3%83%AB%E3%83%88)の設計による言語で登場時期は1970年。名前は、哲学者・数学者・科学者で、機械式計算機を製作するなど技術者でもあったブレーズ・パスカルにあやかったもの。ALGOL（直接的にはその一派生であるヴィルトが関与したALGOL W）などの影響があるが、個人の設計であることに由来する簡素だがよく整った言語仕様（構文と意味）を持つ。
+[ニクラウス・ヴィルト](https://ja.wikipedia.org/wiki/%E3%83%8B%E3%82%AF%E3%83%A9%E3%82%A6%E3%82%B9%E3%83%BB%E3%83%B4%E3%82%A3%E3%83%AB%E3%83%88)の設計による言語。登場時期は1970年。名前は、哲学者・数学者・科学者で、機械式計算機を製作するなど技術者でもあったブレーズ・パスカルにあやかったもの。ALGOL（直接的にはその一派生であるヴィルトが関与したALGOL W）などの影響があるが、個人の設計であることに由来する簡素だがよく整った言語仕様（構文と意味）を持つ。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Pascal.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Pascal.png" alt="" width="938" height="711" class="aligncenter size-full wp-image-532" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/C%E8%A8%80%E8%AA%9E' name='C'>C</a>
-1972年にAT&Tベル研究所の[デニス・リッチー](https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%8B%E3%82%B9%E3%83%BB%E3%83%AA%E3%83%83%E3%83%81%E3%83%BC)が主体となって開発した言語で、AT&Tベル研究所の[ケン・トンプソン](https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%B3%E3%83%BB%E3%83%88%E3%83%B3%E3%83%97%E3%82%BD%E3%83%B3)が開発したB言語の改良として誕生した。
+1972年にAT&Tベル研究所の[デニス・リッチー](https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%8B%E3%82%B9%E3%83%BB%E3%83%AA%E3%83%83%E3%83%81%E3%83%BC)が主体となって開発した言語。AT&Tベル研究所の[ケン・トンプソン](https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%B3%E3%83%BB%E3%83%88%E3%83%B3%E3%83%97%E3%82%BD%E3%83%B3)が開発したB言語の改良として誕生した。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/C.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/C.png" alt="" width="951" height="860" class="aligncenter size-full wp-image-531" /></a>
 
@@ -139,12 +142,12 @@ AT&Tベル研究所の[ケン・トンプソン](https://ja.wikipedia.org/wiki/%
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Prolog.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Prolog.png" alt="" width="384" height="294" class="aligncenter size-full wp-image-530" /></a>
 
 #### <a href'https://ja.wikipedia.org/wiki/Smalltalk' name='Smalltalk'>Smalltalk</a>
-Simulaのオブジェクト（およびクラス）、LISPの徹底した動的性、LOGOのタートル操作や描画機能に、[アラン・ケイ](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A9%E3%83%B3%E3%83%BB%E3%82%B1%E3%82%A4)の「メッセージング」というアイデアを組み合わせて作られたクラスベースの純粋オブジェクト指向言語で、1972年に開発が開始され1980年に公開された。
+Simulaのオブジェクト（およびクラス）、LISPの徹底した動的性、LOGOのタートル操作や描画機能に、[アラン・ケイ](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A9%E3%83%B3%E3%83%BB%E3%82%B1%E3%82%A4)の「メッセージング」というアイデアを組み合わせて作られたクラスベースの純粋オブジェクト指向言語。1972年に開発が開始され1980年に公開された。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Smalltalk.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Smalltalk.png" alt="" width="852" height="583" class="aligncenter size-full wp-image-529" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/Scheme' name='Scheme'>Scheme</a>
-構文スコープを持つLISPの方言の1つで登場時期は1975年。
+構文スコープを持つLISPの方言の1つ。登場時期は1975年。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Scheme.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Scheme.png" alt="" width="333" height="438" class="aligncenter size-full wp-image-528" /></a>
 
@@ -159,7 +162,7 @@ AWK(オーク)はベル研究所におけるUNIX開発の過程で、sedやgrep�
 <a href="http://taisablog.com/wp-content/uploads/2017/05/AWK.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/AWK.png" alt="" width="391" height="364" class="aligncenter size-full wp-image-526" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/Ada' name='Ada'>Ada</a>
-Ada(エイダ)は強力な言語機能を豊富に持ち、高度な型の体系をもつ言語の1つで構文はAlgol系。登場時期は1983年で設計者は[ジャン・イシュビア](https://ja.wikipedia.org/w/index.php?title=%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%BB%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%93%E3%82%A2&action=edit&redlink=1)。史上初のプログラマとされる[エイダ・ラブレス](https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%A4%E3%83%80%E3%83%BB%E3%83%A9%E3%83%96%E3%83%AC%E3%82%B9)の名前にちなんでAdaと命名されている
+Ada(エイダ)は強力な言語機能を豊富に持ち、高度な型の体系をもつ言語の1つで構文はAlgol系。登場時期は1983年で設計者は[ジャン・イシュビア](https://ja.wikipedia.org/w/index.php?title=%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%BB%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%93%E3%82%A2&action=edit&redlink=1)。史上初のプログラマとされる[エイダ・ラブレス](https://ja.wikipedia.org/wiki/%E3%82%A8%E3%82%A4%E3%83%80%E3%83%BB%E3%83%A9%E3%83%96%E3%83%AC%E3%82%B9)の名前にちなんでAdaと命名されている。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Ada.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Ada.png" alt="" width="766" height="877" class="aligncenter size-full wp-image-525" /></a>
 
@@ -181,7 +184,7 @@ C言語をベースにSmalltalk型のオブジェクト指向機能を持たせ�
 <a href="http://taisablog.com/wp-content/uploads/2017/05/CommonLisp.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/CommonLisp.png" alt="" width="253" height="449" class="aligncenter size-full wp-image-545" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/Eiffel' name='Eiffel'>Eiffel</a>
-頑健なソフトウェアの生産に注力したオブジェクト指向言語。1985年に[バートランド・メイヤー](https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%BC%E3%83%88%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%83%A1%E3%82%A4%E3%83%A4%E3%83%BC)によって考案された。言語名の由来は、エッフェル塔ではなく、その設計者の[ギュスターヴ・エッフェル](https://ja.wikipedia.org/wiki/%E3%82%AE%E3%83%A5%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%B4%E3%83%BB%E3%82%A8%E3%83%83%E3%83%95%E3%82%A7%E3%83%AB)
+頑健なソフトウェアの生産に注力したオブジェクト指向言語。1985年に[バートランド・メイヤー](https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%BC%E3%83%88%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%83%A1%E3%82%A4%E3%83%A4%E3%83%BC)によって考案された。言語名の由来は、エッフェル塔ではなく、その設計者の[ギュスターヴ・エッフェル](https://ja.wikipedia.org/wiki/%E3%82%AE%E3%83%A5%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%B4%E3%83%BB%E3%82%A8%E3%83%83%E3%83%95%E3%82%A7%E3%83%AB)。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Eiffel.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Eiffel.png" alt="" width="799" height="878" class="aligncenter size-full wp-image-544" /></a>
 
@@ -191,7 +194,7 @@ C言語をベースにSmalltalk型のオブジェクト指向機能を持たせ�
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Erlang.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Erlang.png" alt="" width="398" height="510" class="aligncenter size-full wp-image-543" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/Perl' name='Perl'>Perl</a>
-[ラリー・ウォール](https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%AA%E3%83%BC%E3%83%BB%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB)によって開発された言語。1987年にプログラミング言語Perlを開発した。プログラマの三大美徳を唱え始めたのもラリー・ウォール。実用性と多様性を重視しており、C言語やsed、awk、シェルスクリプトなど他のプログラミング言語の優れた機能を取り入れている。
+[ラリー・ウォール](https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%AA%E3%83%BC%E3%83%BB%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB)によって開発された言語。登場時期は1987年。プログラマの三大美徳を唱えた。実用性と多様性を重視しており、C言語やsed、awk、シェルスクリプトなど他のプログラミング言語の優れた機能を取り入れている。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Perl.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Perl.png" alt="" width="516" height="811" class="aligncenter size-full wp-image-542" /></a>
 
@@ -216,7 +219,7 @@ C言語をベースにSmalltalk型のオブジェクト指向機能を持たせ�
 マイクロソフトが1990年代に開発していたプログラミング言語およびその処理系。
 
 #### <a href='https://ja.wikipedia.org/wiki/Ruby' name='Ruby'>Ruby</a>
-[まつもとゆきひろ（通称 Matz）](https://ja.wikipedia.org/wiki/%E3%81%BE%E3%81%A4%E3%82%82%E3%81%A8%E3%82%86%E3%81%8D%E3%81%B2%E3%82%8D)により開発されたオブジェクト指向スクリプト言語。1995年12月にfj上で発表された。名称のRubyは、プログラミング言語Perlが6月の誕生石であるPearl（真珠）と同じ発音をすることから、まつもとの同僚の誕生石（7月）のルビーを取って名付けられた。
+[まつもとゆきひろ（通称 Matz）](https://ja.wikipedia.org/wiki/%E3%81%BE%E3%81%A4%E3%82%82%E3%81%A8%E3%82%86%E3%81%8D%E3%81%B2%E3%82%8D)により開発されたオブジェクト指向スクリプト言語。1995年12月にfj上で発表された。Perlが真珠から名付けられたので、それにならって宝石から名付けようと考え、いくつかの候補からRubyを選んだ。最終候補に残ったのがCoral(サンゴ)とRubyで、結局Rubyの方が短く美しいということで採用された。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Ruby.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Ruby.png" alt="" width="903" height="799" class="aligncenter size-full wp-image-553" /></a>
 
@@ -241,7 +244,7 @@ JavaScriptはネットスケープコミュニケーションズの[ブレンダ
 <a href="http://taisablog.com/wp-content/uploads/2017/05/JavaScript.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/JavaScript.png" alt="" width="1229" height="850" class="aligncenter size-full wp-image-549" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/PHP_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)' name='PHP'>PHP</a>
-"The PHP Development Team" によってコミュニティベースで開発されているオープンソースの汎用プログラミング言語であり、特にサーバーサイドで動的なウェブページ作成するための機能を多く備える。 名称のPHPは再帰的頭字語である"PHP: Hypertext Preprocessor"を意味し、「PHPはHTMLのプリプロセッサである」とPHP自身を再帰的に説明している。 元々は「個人的なホームページ」を意味する英語の"Personal Home Page"に由来し、プログラムが大きく書き直されたバージョン3から現在の意味となった。設計者は[ラスマス・ラードフ](https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%B9%E3%83%9E%E3%82%B9%E3%83%BB%E3%83%A9%E3%83%BC%E3%83%89%E3%83%95)で、登場時期は1995年。
+"The PHP Development Team" によってコミュニティベースで開発されているオープンソースの汎用プログラミング言語であり、特にサーバーサイドで動的なウェブページ作成するための機能を多く備える。 名称のPHPは再帰的頭字語である"PHP: Hypertext Preprocessor"を意味し、「PHPはHTMLのプリプロセッサである」とPHP自身を再帰的に説明している。 元々は「個人的なホームページ」を意味する英語の"Personal Home Page"に由来し、プログラムが大きく書き直されたバージョン3から現在の意味となった。設計者は[ラスマス・ラードフ](https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%B9%E3%83%9E%E3%82%B9%E3%83%BB%E3%83%A9%E3%83%BC%E3%83%89%E3%83%95)。登場時期は1995年。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/PHP.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/PHP.png" alt="" width="771" height="868" class="aligncenter size-full wp-image-557" /></a>
 
@@ -261,7 +264,7 @@ JavaScriptはネットスケープコミュニケーションズの[ブレンダ
 ### <a name='2000'>2000年代</a>
 
 #### <a href='https://ja.wikipedia.org/wiki/C_Sharp' name='CSharp'>C#</a>
-マイクロソフトが開発したマルチパラダイムプログラミング言語で登場時期は2000年。開発にはボーランド社のTurbo PascalやDelphiを開発したアンダース・ヘルスバーグを筆頭に多数のDelphi開発陣が参加している。
+マイクロソフトが開発したマルチパラダイムプログラミング言語。登場時期は2000年。開発にはボーランド社のTurbo PascalやDelphiを開発したアンダース・ヘルスバーグを筆頭に多数のDelphi開発陣が参加している。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/CSharp.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/CSharp.png" alt="" width="393" height="804" class="aligncenter size-full wp-image-563" /></a>
 
@@ -281,7 +284,7 @@ C言語をベースとしABI互換を保ちつつも、テンプレートによ�
 <a href="http://taisablog.com/wp-content/uploads/2017/05/FSharp.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/FSharp.png" alt="" width="458" height="801" class="aligncenter size-full wp-image-560" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/Go_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)' name='Go'>Go</a>
-Googleによって開発され、設計に[ロブ・パイク](https://ja.wikipedia.org/wiki/Go_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E))、[ケン・トンプソン](https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%B3%E3%83%BB%E3%83%88%E3%83%B3%E3%83%97%E3%82%BD%E3%83%B3)らが関わっている。軽量スレッディングのための機能、Pythonのような動的型付け言語のようなプログラミングの容易性が特長。登場時期は2009年。
+Googleによって開発された。設計に[ロブ・パイク](https://ja.wikipedia.org/wiki/Go_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E))、[ケン・トンプソン](https://ja.wikipedia.org/wiki/%E3%82%B1%E3%83%B3%E3%83%BB%E3%83%88%E3%83%B3%E3%83%97%E3%82%BD%E3%83%B3)らが関わっている。軽量スレッディングのための機能、Pythonのような動的型付け言語のようなプログラミングの容易性が特長。登場時期は2009年。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Go.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Go.png" alt="" width="719" height="730" class="aligncenter size-full wp-image-559" /></a>
 
@@ -298,7 +301,7 @@ Mozillaによって開発された。関数型プログラミング、並列ア�
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Rust.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Rust.png" alt="" width="715" height="647" class="aligncenter size-full wp-image-568" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/Dart' name='Dart'>Dart</a>
-2011年にグーグル社から公開された。JavaScriptの代替となることを目的に作られた。
+2011年にグーグル社から公開された。JavaScriptの代替となることを目的に作られた言語。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Dart.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Dart.png" alt="" width="1271" height="846" class="aligncenter size-full wp-image-567" /></a>
 
@@ -308,7 +311,7 @@ Mozillaによって開発された。関数型プログラミング、並列ア�
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Elixir.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Elixir.png" alt="" width="1196" height="770" class="aligncenter size-full wp-image-566" /></a>
 
 #### <a href='https://ja.wikipedia.org/wiki/Hack_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)' name='Hack'>Hack</a>
-Facebookにより開発された。PHP実行環境のHipHop仮想マシン (HHVM) で動作する。登場時期は2014年
+Facebookにより開発された。PHP実行環境のHipHop仮想マシン (HHVM) で動作する。登場時期は2014年。
 
 <a href="http://taisablog.com/wp-content/uploads/2017/05/Hack.png"><img src="http://taisablog.com/wp-content/uploads/2017/05/Hack.png" alt="" width="863" height="874" class="aligncenter size-full wp-image-565" /></a>
 
@@ -319,7 +322,7 @@ Facebookにより開発された。PHP実行環境のHipHop仮想マシン (HHVM
 
 ## 最後に
 
-wikipediaの情報を元に出力しているので足りてない部分や誤っている箇所、単純に記述にミスってる部分はあると思います。その場合は是非コメントやpull requestをお願いします。
+wikipediaの情報を元に出力しているので足りてない部分や誤っている箇所、単純に記述にミスってる部分が多分にあると思いますが参考になればと思います。何かお気づきの際は是非コメントやpull requestを頂けたらうれしいです。
 
 ### 参考
 
@@ -328,8 +331,3 @@ wikipediaの情報を元に出力しているので足りてない部分や誤�
 <iframe width="100%" height="166" scrolling="no" frameborder="no"
      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/309118827&color=ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
 </iframe>
-
-### ソース
-
-<blockquote class="embedly-card"><h4><a href="https://github.com/taisa831/Langury">taisa831/Langury</a></h4><p>Contribute to Langury development by creating an account on GitHub.</p></blockquote>
-<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
