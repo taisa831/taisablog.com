@@ -20,12 +20,8 @@ function getFirstItem(callback) {
 getFirstItem(function (err, item) {
     // エラー処理
     if (err) {
-        console.error(e);
+        console.error(err);
     }
     // 本来やりたかった処理
     someProcess(item);
 });
-
-function someProcess(item) {
-
-}

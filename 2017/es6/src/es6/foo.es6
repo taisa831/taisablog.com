@@ -1,0 +1,2 @@
+// デフォルトエクスポート
+export default "foo!";
