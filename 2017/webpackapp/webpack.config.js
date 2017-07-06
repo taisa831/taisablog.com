@@ -1,9 +1,10 @@
-var path = require('path');
+const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: './src/bootstrap.js',
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -11,10 +12,12 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
-                    'css-loader'
+                    'style-loader', 'css-loader'
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('./style.css'),
+    ]
 };

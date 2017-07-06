@@ -17284,7 +17284,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".hello {\n    color: red;\n}", ""]);
+exports.push([module.i, ".hello {\n    color: red;\n}\n", ""]);
 
 // exports
 
