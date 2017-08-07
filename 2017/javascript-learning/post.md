@@ -1,23 +1,24 @@
-俺的フロントエンド速習コース
+おれ的フロントエンド速習コース
 
-ここ3ヶ月間で「フロントエンド」向上の為に取り組んだことを書く。
+3ヶ月間で自分のフロントエンド力を向上させるにあたって取り組んだことを書く。
 
 ## フロントエンドって？
 
-どこからどこまで？何を指してる？と引っかかる人がいるかもしれませんがそこら辺は内容を見てお察しください。
+どこからどこまで？何を指してる？と引っかかる人がいるかもしれないけどそこら辺はなんとなくお察しください。
 
 ## 3ヶ月前まで
 
-- これまではJSとjQueryのみ
-- JSとjQueryは毎回ノリで書いていた（もちろんカオスにならないように最大限工夫はしてるけど）
-- モダン情報のキャッチアップは流れが早いからとりあえず様子見
-- けど2017年中になんとかしたいしやるなら一気にやりたい
+- JSとjQueryのみ
+- 毎回ノリで書いていた（もちろんカオスにならないように最大限工夫はしてるけど）
+- 流れが早いからモダン情報のキャッチアップはタイミングを見計らっている
+- けど2017年中にはなんとかしたい
+- やるなら一気にやりたい
 
-3ヶ月前まではそんな感じだったけどそろそろちょっと落ち着いてきた感があり他の学習もキリが良くなっていたのでやることにした。
+始める前まではこんな感じだったけど、そろそろいってもいいかな？ということでやり始めた。
 
 ## 速習後
 
-もともとは既存プロダクトをどうにかするつもりで始めたけどタイミングよく新規プロダクトを立ち上げることになり以下を無理なく新規プロダクトに採用することができた。
+もともとは既存プロダクトをどうにかするつもりで始めていたけど、タイミングよく新規プロダクトを立ち上げることになったので採用した。何もしてなかったらかなり勇気が必要だったと思う。
 
 - ES6
 - React
@@ -28,7 +29,7 @@
 - Go
 - PHP(継続)
 
-## 3ヶ月でやった事のご紹介
+## 3ヶ月でやった事
 
 - JavaScript(ES5)を速習する
 - ES6を速習する
@@ -42,31 +43,47 @@
 
 オライリー本で速習
 
-「JavaScript: The Good Parts」や他の本もいいけど個人的にはこの本が発売時期もよいしお薦め。デザインパターンの章は他に「JavaScriptデザインパターン」という書籍もあるので飛ばしてもよいと思う。
+[amazonjs asin="4873114888" locale="JP" title="JavaScriptパターン ―優れたアプリケーションのための作法"]
+
+「<a href="https://www.amazon.co.jp/JavaScript-Parts-%E2%80%95%E3%80%8C%E8%89%AF%E3%81%84%E3%83%91%E3%83%BC%E3%83%84%E3%80%8D%E3%81%AB%E3%82%88%E3%82%8B%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9-Douglas-Crockford/dp/4873113911?SubscriptionId=AKIAJPATVFHYPKSNTR4A&amp;tag=joghmasami-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4873113911" title="JavaScript: The Good Parts ―「良いパーツ」によるベストプラクティス" target="_blank">JavaScript: The Good Parts ―「良いパーツ」によるベストプラクティス</a>」や他の本もいいけど個人的にはこの本がお薦め（発売時期がよい）。
+※デザインパターンの章は他に「<a href="https://www.amazon.co.jp/JavaScript%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3-Addy-Osmani/dp/487311618X?SubscriptionId=AKIAJPATVFHYPKSNTR4A&amp;tag=joghmasami-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=487311618X" title="JavaScriptデザインパターン" target="_blank">JavaScriptデザインパターン</a>」という書籍があるしここでは読み飛ばしてもよいと思う。
 
 ### ES6を速習する
 
-Web+DB PRESS vol.87で速習
+WEB+DB PRESS Vol.87で速習
 
-![](https://cdn.slideship.com/users/4sKaLQ6517UNi2SrUAMVb7/img/2017/07/YDseahNtZ5imaEdiN3aCKu.jpg =23%x)
+[amazonjs asin="4774173703" locale="JP" title="WEB+DB PRESS Vol.87"]
 
-非常に分かりやすく端的に説明されているのでとてもよい。有名な方のtweetにもこのような投稿がありました。
+非常に分かりやすく端的に説明されていてとてもよい。
+（こんなツイートも↓）
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">『JavaScript: The Good Parts』と『WEB+DB PRESS Vol.87 第1特集』のあわせて250ページ未満でES6までの全体像をつかむ速習コースのご提案 <a href="http://t.co/doPQ7V4enw">http://t.co/doPQ7V4enw</a> <a href="http://t.co/NKTGz3syk7">http://t.co/NKTGz3syk7</a></p>&mdash; Takuto Wada (@t_wada) <a href="https://twitter.com/t_wada/status/630687620889079812">2015年8月10日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ### React(でSPA)を速習する
 
-Web+DB PRESS vol.97で速習
-
-![](https://cdn.slideship.com/users/4sKaLQ6517UNi2SrUAMVb7/img/2017/07/7p3B86xRtdPVQbbYYv1FK1.jpg =22%x)
+[amazonjs asin="4774187283" locale="JP" title="WEB+DB PRESS Vol.97"]で速習
 
 React+Flux、クライアントサイドルーティング、サーバサイドレンダリング、webpackについて丁寧に説明されている。他にもマネジメントやPythonに関する内容があってとても読みごたえがある。
 
+#### すぐに「理解できた」という訳にはいかない
+
+Reactはそれなりに初期学習コストがあるので以下のことを繰り返しながらじっくり理解を進めていった。
+
+- [サンプルコードを動かす](http://gihyo.jp/magazine/wdpress/archive/2017/vol97/support)
+- [本家サイトチェック](https://facebook.github.io/react/)
+- ブログ記事チェック
+    - [今話題のReact.jsはどのようなWebアプリケーションに適しているか？（お薦め記事）](https://html5experts.jp/hokaccha/13301/)
+- サンプルコードを作る
+- Web+DB PRESS見直す
+
 ### マークアップを速習する
 
-マークアップも「一人でできるようになりたい」ということで社内のUI/UXデザイナーにハンズオンをしてもらった。このハンズオンの一番の目的は**何から手をつけていいか分からない**という状況から脱却して**自分でもなんとか勉強できる**状態にすることでこれだけでなんとかなるものではない。
+マークアップも一人でできるようになりたいというメンバーが多かったのもあり、社内のUI/UXデザイナーにハンズオンをしてもらった。このハンズオンの目的としては**何から手をつけていいか分からない**という状況から脱却して**自分でもなんとか勉強できる**状態にすることでこれだけでなんとかしようというものではない。
 
-![](https://cdn.slideship.com/users/4sKaLQ6517UNi2SrUAMVb7/img/2017/07/X9oxfgTMceTEXPdwMpERU7.png =30%x)
+<script async class="speakerdeck-embed" data-id="b3c335b30aaa4e30980e5b0898d6abdd" data-ratio="1.41436464088398" src="//speakerdeck.com/assets/embed.js"></script>
 
-**参考**
+**関連リンク**
 - [初心者向けざっくりHTML/CSSコーディングハンズオン資料](https://speakerdeck.com/oremega/csskodeinguhanzuonzi-liao)
 - [社内エンジニア向けにマークアップハンズオンを開催しました](http://tech.aainc.co.jp/archives/10837)
 
@@ -79,67 +96,26 @@ React+Flux、クライアントサイドルーティング、サーバサイド�
 
 ### 勉強会で速習する
 
-コミュニケーションしながら疑問点を解決してもらえたのでとても助かった。また、React、VueJS、Angular以外も含めたフレームワーク発表会をやったりしていろんなフレームワークの特徴を知ることができた。またそれをうけてあたらめてReact、VueJS、Angularだなと思った。
+コミュニケーションしながら疑問点を解決してもらえたのでとても助かった。他にもReact、VueJS、Angular以外も含めたフレームワーク発表会をやったりした。またそれをうけてあたらめてReact、VueJS、Angularはいいなと実感した。
 
-![](https://cdn.slideship.com/users/4sKaLQ6517UNi2SrUAMVb7/img/2017/07/6DAjmBCmTZ8BMUmgaW2J4X.jpg =25%x)
+<a href="http://taisablog.com/wp-content/uploads/2017/08/6DAjmBCmTZ8BMUmgaW2J4X.jpg"><img src="http://taisablog.com/wp-content/uploads/2017/08/6DAjmBCmTZ8BMUmgaW2J4X-450x600.jpg" alt="" width="450" height="600" class="aligncenter size-medium wp-image-726" /></a>
 
 ### チームメンバーと速習する
 
-- 今Q（4-6月）はJSをやろうと全員で決めた
-    - ※この間業務でJS触る機会は0だった・・・
+- 今QはJSをやろうと全員で決めた（※この間業務でJS触る機会は0だった）
 - 情報共有しやすい
-- ここでもチームメンバー5人で分担してReact、VueJS、Angularを調べて発表会をした
-- チームメンバーのJSに対する意識が全体的に変わり導入障壁が低くなった
+- ここでもチームメンバーで分担してReact、VueJS、Angularを調べて発表会をした
+- チームメンバーのJSに対する意識が全体的に変わって導入障壁が低くなった
 
 ## まとめ
 
 - 業務でJS触る機会が0だったとしても3ヶ月あれば結構イケる
 - 他にやりたいことができてもなるべく我慢してJSやるの大事
-- あとは実践投入するだけ（※無謀な挑戦にならなくて済んだ）
+- あとは実践あるのみ（※無謀な挑戦にならなくて済んだ）
 
-結果
+## 結果
 
 **JSが好きになった&#x1f917;**
 
 
-
-
-この間業務でJSを触る機会はなかった
-
-## Javascriptを速習する
-
-普段開発はしてるけどJSはノリでやってきたっていう人にはこの本が断然おすすめ。javascript good partsもよいけど、発売時期がこちらの方がES5が公開されて以降だし内容も非常に良いので個人的にはこちらをおすすめしたい。特に第4章の関数がよい。
-
-## ES6を速習する
-
-ES6を速習するにはこちらがおすすめ。分かりやすく端的に説明されている。
-
-WEB+DB PRESS Vol.87
-
-## ReactJS(SPA)を速習する
-
-ReactJS（SPA）を速習するにはこちらがおすすめ。ES5、ES6を確認した上で見たのでチンプンカンプンではなかったけどそれでもReactを理解するのには時間がかかった。本家のサイトを見たりブログ記事を見たりした後またこの本を見てサンプルコードを動かしてみて少しずつ理解ができてReactいいなとなった。
-
-一番わかりやすいと思った記事
-
-## マークアップを速習する
-
-マークアップも一緒にやれるようになりたいということで社内のUI/UXデザイナーにスライドを作ってもらってハンズオンをしてもらった。
-
-## Podcastで速習する
-
-https://genba.fm/
-
-## 勉強会で速習する
-
-上記Javascriptパターンの輪読会をやっている勉強会に呼んで頂きコミュニケーションをすることでより理解が深まった。また、フレームワーク紹介の会をやったり
-
-## チームメンバーと協力して速習する
-
-チームメンバーとも今QはJSを頑張ろうということでReact、Vue、Angularで分担して調べた内容を発表したりした
-
-## まとめ
-
-他にやりたいことがあってもなるだけ我慢してやり続けることが大事
-業務で触る機会が0でも大丈夫
-あとは実践導入するだけ
+※ この内容は[「slideship Tech Dive vol.1 フロントエンド特集」でLTしてきた」](http://taisablog.com/archives/667)で発表した内容をベースにしています。
