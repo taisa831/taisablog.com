@@ -1,0 +1,6 @@
+{
+    "dev": {
+        "app_function": "my_module.app",
+        "s3_bucket": "zappa-jkrgy1016"
+    }
+}
