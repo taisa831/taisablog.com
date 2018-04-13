@@ -1,5 +1,16 @@
 映画の推薦システムをつくる
 
+## 事前準備
+
+<pre>
+$ pip3 install numpy
+$ pip3 install scipy
+$ pip3 install scikit-learn
+$ pip3 install jupyter
+$ pip3 install pandas
+$ pip3 install matplotlib
+</pre>
+
 ## シナリオ
 
 映画の推薦システムを作るために、MovieLensという映画のレーティングサイトのデータを用いて、ユーザーが評価した星の数を予測する
@@ -96,7 +107,15 @@ Eコマースにおける推薦システムの応用シーンは、運用目的�
 
 それぞれ長所と短所がある
 
-表
+嗜好データの獲得方による長所・短所
+
+|種類 |明示的 |暗黙的 |
+|----|------|-------|
+|データ量 | ✕ | ◯ |
+|データの正確さ| ◯ | ✕ |
+|未評価と不支持の区別| ◯ | ✕ |
+|利用者の認知| ◯ | ✕ |
+
 
 - データ量
     - データ量は明示的データより暗黙的データの方が圧倒的に多くなる
@@ -128,9 +147,69 @@ Eコマースにおける推薦システムの応用シーンは、運用目的�
 
 ### ユーザ間型協調フィルタリング
 
+ユーザ間型協調フィルタリングは、以下の流れで行う
 
+1. ユーザーの情報をベクトルで表現する
+2. ユーザー間がどれくらい似ているか（類似度）を決める
+3. 類似度にもとづいて評価値を算出する
+
+代表的な類似度
+
+- ピアソンの相関係数
+- コサイン類似度
+- ジャッカード係数
+
+ピアソンの相関係数
+
+<pre>
+import numpy as np
+def pearson_coefficient(u, v):
+    u_diff = u - np.mean(u)
+    v_diff = v - np.mean(v)
+    numerator = np.dot(u_diff, v_diff)
+    denominator = np.sqrt(sum(u_diff **2)) * np.sqrt(sum(v_diff **2))
+    return numerator / denominator
+</pre>
+
+SciPyを使った場合
+
+<pre>
+from scipy.spatial.distance import correlation
+1 - correlation(u, v)
+</pre>
+
+コサイン類似度
+
+<pre>
+from scipy.spatial.distance import cosine
+1 - cosine(u, v)
+</pre>
+
+ジャッカード係数
+
+<pre>
+from scipy.spatial.distance import cosine
+1 - cosine(u, v)
+</pre>
 
 ### アイテム間型協調フィルタリング
+
+調整済みコサイン類似度
+
+<pre>
+def adjusted_cosine_coefficient(m, n, u_mean):
+    adjusted_m = m - u_mean
+    adjusted_n = n - u_mean
+    numerator = np.dot(adjusted_m, adjusted_n)
+    denominator = np.sqrt(sum(adjusted_m **2)) * np.sqrt(sum(adjusted_n **2))
+    return numerator / denominator
+</pre>
+
+<pre>
+rating = np.asarray([[5, 0, 2],[4, 0, 1], [0, 4, 5]])
+u_mean = rating.mean(axis=1)
+# array([ 2.33333333, 1.6666667, 3.])
+</pre>
 
 ### モデルベース協調フィルタリング
 
@@ -162,8 +241,85 @@ unzip ml-100k.zip
 ユーザー情報を読み込んでpandasのDataFrameに格納する
 
 <pre>
+import pandas as pd
 
+u_cols = ['user_id', 'age', 'sex', 'occupation', 'zip_code']
+users = pd.read_csv('ml-100k/u.user', sep='|', names=u_cols)
+users.head()
 </pre>
+
+ユーザー情報一部の表
+
+評価値情報を読み込む
+
+<pre>
+r_cols = ['user_id', 'movie_id', 'rating', 'unix_timestamp']
+ratings = pd.read_csv('ml-100k/u.data', sep='\t', names=r_cols)
+ratings['date'] = pd.to_datetime(ratings['unix_timestamp'], unit='s')
+ratings.head()
+</pre>
+
+評価値情報の表
+
+映画情報を読み込む
+
+<pre>
+m_cols = ['movie_id', 'title', 'release_date', 'video_relase_date', 'imdb_url']
+movies = pd.read_csv('ml-100k/u.item', sep='|', names=m_cols, usecols=range(5), encoding = "latin1")
+movies.head()
+</pre>
+
+映画情報の表
+
+すべての表をマージする
+
+<pre>
+movie_rating = pd.merge(movies, ratings)
+lens = pd.merge(movie_rating, users)
+</pre>
+
+全データの中で、最も評価された25作品を見てみると1位はスターウォーズの583件
+
+<pre>
+lens.title.value_counts()[:25]
+</pre>
+
+評価の数と平均を集計し、平均値の高い順に並べ替えをする
+
+<pre>
+movie_stats = lens.groupby('title').agg({'rating': [np.size, np.mean]})
+movie_stats.sort_values(by=[('rating', 'mean')], ascending=False).head()
+</pre>
+
+評価件数が1件と少ないため評価の平均が高くなる映画が上位に来てしまう
+
+これを防ぐために評価数の多いもののみで平均する
+
+<pre>
+atleast_100 = movie_stats['rating']['size'] >= 100
+movie_stats[atleast_100].sort_values(by=[('rating', 'mean')], ascending=False)[:15]
+</pre>
+
+評価回数の分布
+
+<pre>
+from matplotlib import pyplot as plt
+plt.style.use('ggplot')
+
+lens.groupby('user_id').size().sort_values(ascending=False).hist()
+
+plt.xlabel('rating size')
+plt.ylabel('count of rating')
+</pre>
+
+ユーザーごとの評価数と評価値の平均について調べてみる
+
+<pre>
+user_stats = lens.groupby('user_id').agg({'rating': [np.size, np.mean]})
+user_stats['raging'].describe()
+</pre>
+
+評価値の平均に着目をすると、最低が平均1.49点の辛口のユーザーから4.87点の甘めのユーザーまで、ユーザーごとにバイアスがあることがわかる
 
 ## 推薦システムの実装
 
@@ -173,6 +329,51 @@ MovieLensのデータを使って、映画の評価値を予測する
 
 ここではFactorization Machinesを使って推薦する
 
+- Matrix Factorizationではユーザーとアイテムの情報しか扱えなかったが、Factorization Machinesはそれ以外の特徴量も扱うことができる
+- ロジスティック回帰などと異なり、Matrix Factorizationと同じく疎な行列を扱うことができる
+- 特徴量の間で影響を与え合う交互作用を考慮することができるので、相関関係がある特徴量も適切に扱うことができる
+
+factFMを使う
+
+<pre>
+pip3 install fastFM
+</pre>
+
+fastFMの利用するアルゴリズム
+
+- ALS
+- SGD
+- MCMC
+- マルコフチェインモンテカルロ法
+
+ALS
+
+<pre>
+from sklearn.feature_extraction import DictVectorizer
+
+
+train = [
+    {"user": "1", "item": "5", "age": 19},
+    {"user": "2", "item": "43", "age": 33},
+    {"user": "3", "item": "20", "age": 55},
+    {"user": "4", "item": "10", "age": 20},
+]
+
+
+V = DictVectorizer()
+X = V.fit_transform(train)
+print(X.toarray())
+</pre>
+
+<pre>
+from fastFM import als
+import numpy as np
+
+y = np.array([5.0, 1.0, 2.0, 4.0])
+fm = als.FMRegression(n_iter=1000, init_stdev=0.1, rank=2, l2_reg_w=0.1, l2_reg_V=0.5)
+fm.fit(X, y)
+fm.predict(V.transform({"user": "5", "item": "10", "age": 24}))
+</pre>
 
 
 ### いよいよFactorization Machineで学習する
@@ -180,11 +381,30 @@ MovieLensのデータを使って、映画の評価値を予測する
 全体の傾向が分かったので、実際に映画の評価値を予測してみる。
 
 <pre>
+def load_data(filename, path="ml-100k/"):
+    data = []
+    y = []
+    with open(path+filename) as f:
+        for line in f:
+            (user, movieid, rating, ts) = line.split('\t')
+            data.append({"user_id": str(user), "movie_id": str(movieid)})
+            y.append(float(rating))
 
+    return (data, np.array(y))
+    
+
+(dev_data, y_dev) = load_data("ua.base")
+(test_data, y_test) = load_data("ua.test")
 </pre>
 
 <pre>
+from sklearn.model_selection import train_test_split
 
+v = DictVectorizer()
+X_dev = v.fit_transform(dev_data)
+X_test = v.transform(test_data)
+np.std(y_test)
+X_train, X_dev_test, y_train, y_dev_test = train_test_split(X_dev, y_dev, test_size=0.1, random_state=42)
 </pre>
 
 <pre>
