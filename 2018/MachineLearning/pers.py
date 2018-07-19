@@ -24,11 +24,11 @@ w = np.zeros(3)  # パラメータを初期化(3次の 0 ベクトル)
 
 np.random.seed() # 乱数を初期化
 while True:
-    list = range(N)
-    random.shuffle(list)
+    lista = list(range(N))
+    random.shuffle(lista)
 
     misses = 0 # 予測を外した回数
-    for n in list:
+    for n in lista:
         x_n, y_n = X[n, :]
         t_n = T[n]
 
@@ -38,11 +38,11 @@ while True:
         # 予測が不正解なら，パラメータを更新する
         if predict != t_n:
             w += t_n * phi(x_n, y_n)
-  misses += 1
+            misses += 1
 
   # 予測が外れる点が無くなったら学習終了(ループを抜ける)
-  if misses == 0:
-    break
+    if misses == 0:
+        break
 
 # 図を描くための準備
 seq = np.arange(-3, 3, 0.02)
